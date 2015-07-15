@@ -1,0 +1,34 @@
+<!-- Template -->
+<div class="header">
+    <i class="fa fa-arrow-left pull-left" ng-click="previous()"></i>
+    <span class="month">{{month | date:'MMMM yyyy'}} <i class="fa fa-chevron-down" ng-click="SimpleCalendarDataInputs = !SimpleCalendarDataInputs"></i></span>
+    <i class="fa fa-arrow-right pull-right" ng-click="next()"></i>
+    <i class="fa fa-refresh pull-right" ng-if="startDate || endDate" ng-click="reset()"></i>
+</div>
+<div class="body">
+	<div class="week names">
+	    <span class="day-name">S</span>
+	    <span class="day-name">M</span>
+	    <span class="day-name">T</span>
+	    <span class="day-name">W</span>
+	    <span class="day-name">T</span>
+	    <span class="day-name">F</span>
+	    <span class="day-name">S</span>
+	</div>
+	<div class="week" ng-repeat="week in weeks">
+		<div class="day-container" ng-repeat="day in week.days" ng-click="selectDateRange(day)" ng-class="{today:isToday(day),'start-date':isStartDate(day),'end-date':isEndDate(day),between:isBetween(day)}">
+		    <span class="day">{{day | date:'d'}}</span>
+		    <span class="lay-over" ng-if="endDate && isStartDate(day)"></span>
+	    </div>
+	</div>
+	<div class="data-inputs" ng-class="{hidden:!SimpleCalendarDataInputs}">
+		<div class="form-group text-left">
+			<label>Start Date</label>
+			<input type="text" class="form-control" ng-model="startDateStandard">
+		</div>
+		<div class="form-group text-left">
+			<label>End Date</label>
+			<input type="text" class="form-control" ng-model="endDateStandard">
+		</div>
+	</div>
+</div>
