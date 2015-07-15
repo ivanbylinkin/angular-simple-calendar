@@ -5,6 +5,10 @@
 After searching the web for a nice looking simple date range calendar and coming up empty I made my own.<br>
 This is meant to be easily modifiable and used as either a complete product or a boiler plate.
 
+## Small Simple Demp
+
+<a href="http://ivanbylinkin.github.io/">A Small Demo</a>
+
 ## Dependencies
 
 Simple Calendar requires Additional Code<br>
