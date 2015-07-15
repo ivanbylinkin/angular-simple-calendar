@@ -5,6 +5,13 @@
 After searching the web for a nice looking simple date range calendar and coming up empty I made my own.<br>
 This is meant to be easily modifiable and used as either a complete product or a boiler plate.
 
+## Dependencies
+
+Simple Calendar requires Additional Code<br>
+Angular JS - download <a href="https://angularjs.org/">here</a><br>
+Font Awesome - download <a href="http://fortawesome.github.io/">here</a><br>
+Bootstrap - download <a href="http://getbootstrap.com/">here</a> (only needed for 2 classes, "form-group" and "form-control")
+
 ## Included Parts
 
 I've included the basics.
