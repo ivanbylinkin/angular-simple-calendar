@@ -26,6 +26,11 @@ I've included the basics.
 </ul>
 
 ## Basic Usage
+First, remember to add 'simpleCalendar' to your module's dependencies array.
+```javascript
+  angular.module('MyModule',['simpleCalendar']);
+```
+
 You can initialize simple calendar in all 3 angular ways.
 ```javascript
 // you can initialize by creating a simple-calendar tag
