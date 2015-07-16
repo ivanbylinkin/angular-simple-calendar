@@ -19,7 +19,8 @@ angular.module('simpleCalendar',[]).directive("simpleCalendar", function() {
 			scope.weeks = [];
 			// determine first Sunday
 			var fSunday = new Date(scope.today);
-			fSunday.setDate(-fSunday.getDay()+1);
+			fSunday.setDate(0);
+			fSunday.setDate(fSunday.getDate()-fSunday.getDay());
 			// run through days until you finish with a Saturday
 			if (!scope.numberOfWeeks){ scope.numberOfWeeks = 6; }
 			_buildWeeks(fSunday,scope.numberOfWeeks);
@@ -29,14 +30,16 @@ angular.module('simpleCalendar',[]).directive("simpleCalendar", function() {
 				scope.month.setMonth(scope.month.getMonth()+1);
 				// determine the new first Sunday
 				fSunday = new Date(scope.month);
-				fSunday.setDate(-fSunday.getDay()+1);
+				fSunday.setDate(0);
+				fSunday.setDate(fSunday.getDate()-fSunday.getDay());
 				// build the weeks
 				_buildWeeks(fSunday,scope.numberOfWeeks);
 			};
 			scope.previous = function(){
 				scope.month.setMonth(scope.month.getMonth()-1);
 				fSunday = new Date(scope.month);
-				fSunday.setDate(-fSunday.getDay()+1);
+				fSunday.setDate(0);
+				fSunday.setDate(fSunday.getDate()-fSunday.getDay());
 				_buildWeeks(fSunday,scope.numberOfWeeks);
 			};
 			// check if date is today
@@ -89,7 +92,8 @@ angular.module('simpleCalendar',[]).directive("simpleCalendar", function() {
 				scope.month = new Date(scope.today);
 				// determine the new first Sunday
 				fSunday = new Date(scope.month);
-				fSunday.setDate(-fSunday.getDay()+1);
+				fSunday.setDate(0);
+				fSunday.setDate(fSunday.getDate()-fSunday.getDay());
 				// build weeks
 				_buildWeeks(fSunday,scope.numberOfWeeks);
 			};
